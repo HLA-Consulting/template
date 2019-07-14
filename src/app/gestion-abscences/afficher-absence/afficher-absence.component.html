@@ -1,0 +1,35 @@
+<div class="grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste des absences</h4>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nom et prenom Enfant</th>
+              <th>Date debut de l'absence</th>
+              <th>Date reprise</th>
+              <th>Status de l'absence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let abs of listeAbsence">
+              <td>{{ abs.nomEnfant + " " + abs.prenomEnfant}} </td>
+              <td>{{ abs.dateAbsence | date : format : 'dd-MM-YYYY'}}</td>
+              <td>{{ abs.dateReprise | date : format : 'dd-MM-YYYY'}}</td>
+              <td *ngIf="abs.dateReprise > curDate">
+                <label class="badge badge-warning">l'enfant n'a pas encore repris</label>
+              </td>
+              <td *ngIf="abs.dateReprise <= curDate">
+                <label class="badge badge-success">l'enfant a repris</label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button class="btn btn-primary" routerLink="/creerAbsence" routerLinkActive="active">Saisir nouvelle absence</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

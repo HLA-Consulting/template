@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Creer Compte Parent</h4>
+        <form class="forms-sample" (submit)="creerParent(parentForm)" #parentForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputName1">Nom du Parent</label>
+            <input type="text" class="form-control" name="nom" ngModel placeholder="Saisir votre nom">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Prenom du Parent</label>
+            <input type="text" class="form-control" name="prenom" ngModel placeholder="Saisir votre prenom">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Numero de Telephone</label>
+            <input type="number" class="form-control" name="numTel" ngModel placeholder="Votre numero de telephone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Adresse Email</label>
+            <input type="email" required class="form-control" name="email" ngModel placeholder="Votre adresse Email">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputName1">Mot de Passe</label>
+              <input type="password" required class="form-control" name="password" ngModel placeholder="Votre mot de passe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Numero carte d'identité</label>
+            <input type="number" required class="form-control" name="cin" ngModel placeholder="CIN">
+          </div>
+          <div class="form-group">
+            <label for="exampleSelectPrimary">Nombre d'enfants</label>
+            <select class="form-control" name="nbrEnfant" ngModel id="exampleSelectPrimary">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Valider</button>
+          <button class="btn btn-light" routerLink="/dashboard" routerLinkActive="active">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Creer Compte Employé</h4>
+        <form class="forms-sample" (submit)="creerEmploye(employeForm)" #employeForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputName1">Nom Employé</label>
+            <input type="text" required class="form-control" matInput name="nom" ngModel placeholder="Saisir le nom" #nomInput="ngModel">
+            <!--<mat-error *ngIf="nomInput.invalid">Entrer votre nom SVP</mat-error>-->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Prenom Employé</label>
+            <input type="text" required class="form-control" name="prenom" ngModel placeholder="Saisir le prenom">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Numero carte d'identité</label>
+            <input type="number" required class="form-control" name="cin" ngModel placeholder="Saisir numéro CI">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputName1">Adresse Email</label>
+              <input type="email" required class="form-control" name="email" ngModel placeholder="Votre adresse Email">
+            </div>
+          <div class="form-group">
+              <label for="exampleInputName1">Mot de Passe</label>
+              <input type="password" required class="form-control" name="password" ngModel placeholder="Votre mot de passe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Numero de Tél</label>
+            <input type="number" required class="form-control" name="numTel" ngModel placeholder="Numero de telephone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Salaire</label>
+            <input type="number" class="form-control" name="salaire" ngModel placeholder="Saisir salaire">
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Valider</button>
+          <button class="btn btn-light" routerLink="/dashboard" routerLinkActive="active">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

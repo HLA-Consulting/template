@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Saisir Nouvelle Abscence</h4>
+        <form class="forms-sample" (submit)="onSubmit(gestionAbscencesForm)" #gestionAbscencesForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputName1">Nom Enfant</label>
+            <input type="text" class="form-control" name="nomEnfant" ngModel placeholder="Nom Enfant">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Prenom Enfant</label>
+            <input type="text" class="form-control" name="prenomEnfant" ngModel placeholder="Prenom Enfant">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Date de l'abscence</label>
+            <input type="date" class="form-control" name="dateDebutAbs" ngModel placeholder="Date Abscence">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Date de Reprise</label>
+            <input type="date" class="form-control" name="dateRepriseAbs" ngModel placeholder="Date Reprise">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputCity1">Raison de l'abscence</label>
+            <input type="text" class="form-control" name="raisonAbs" ngModel placeholder="Location">
+          </div>
+          <div class="form-group">
+            <label for="exampleTextarea1">Commentaire</label>
+            <textarea class="form-control" name="commentaire" ngModel rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Valider</button>
+          <button class="btn btn-light" routerLink="/dashboard" routerLinkActive="active">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
