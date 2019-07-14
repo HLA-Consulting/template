@@ -17,10 +17,13 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
+<<<<<<< HEAD
 import { SignupComponent } from './Authentification/signup/signup.component';
 import { LoginComponent } from './Authentification/login/login.component';
 import { CreerAbsenceComponent } from './gestion-abscences/creer-absence/creer-absencecomponent';
 import { AfficherAbsenceComponent } from './gestion-abscences/afficher-absence/afficher-absencecomponent';
+=======
+>>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -39,11 +42,15 @@ const routes: Routes = [
   { path: 'dropdowns', component: DropdownComponent },
   { path: 'tooltips', component: TooltipsComponent },
   { path: 'carousel', component: CarouselComponent },
+<<<<<<< HEAD
   { path: 'tabs', component: TabsComponent },
   { path: 'creerAbsence', component: CreerAbsenceComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'afficherAbsence', component: AfficherAbsenceComponent}
+=======
+  { path: 'tabs', component: TabsComponent }
+>>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
 ];
 
 @NgModule({
@@ -51,7 +58,10 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+<<<<<<< HEAD
 
 //npm install --save-dev @angular-devkit/build-angular
 //npm remove -g angulat-cli
 //npm install -g @angular/cli
+=======
+>>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
