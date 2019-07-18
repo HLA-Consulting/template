@@ -29,11 +29,7 @@ export class FormsComponent implements OnInit {
 
   constructor() { }
 
-<<<<<<< HEAD
   /*search = (text$: Observable<string>) =>
-=======
-  search = (text$: Observable<string>) =>
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
     text$
       .debounceTime(200)
       .distinctUntilChanged()
@@ -49,11 +45,7 @@ export class FormsComponent implements OnInit {
       .debounceTime(200).distinctUntilChanged()
       .merge(this.focus$)
       .merge(this.click$.filter(() => !this.instance.isPopupOpen()))
-<<<<<<< HEAD
       .map(term => (term === '' ? states : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10));*/
-=======
-      .map(term => (term === '' ? states : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10));
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
 
 
   ngOnInit() {

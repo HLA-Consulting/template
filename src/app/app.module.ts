@@ -26,15 +26,12 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
-<<<<<<< HEAD
 import { CreerAbsenceComponent } from './gestion-abscences/creer-absence/creer-absencecomponent';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SignupComponent } from './Authentification/signup/signup.component';
 import { LoginComponent } from './Authentification/login/login.component';
 import { AfficherAbsenceComponent } from './gestion-abscences/afficher-absence/afficher-absencecomponent';
-import {MatFormFieldModule} from '@angular/material/form-field';
-=======
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -57,7 +54,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     DropdownComponent,
     TooltipsComponent,
     CarouselComponent,
-<<<<<<< HEAD
     TabsComponent,
     CreerAbsenceComponent,
     SignupComponent,
@@ -66,16 +62,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   ],
   imports: [
     HttpClientModule,
-=======
-    TabsComponent
-  ],
-  imports: [
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
     MatFormFieldModule,
     NgbModule.forRoot()
   ],
@@ -86,11 +76,3 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-=======
-    NgbModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50

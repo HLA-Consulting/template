@@ -11,10 +11,6 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-<<<<<<< HEAD
-    "baseUrl": "src",
-=======
->>>>>>> d34a7782087cbff29a702c12226547a522c5fd50
     "typeRoots": [
       "node_modules/@types"
     ],
