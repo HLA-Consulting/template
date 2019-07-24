@@ -9,15 +9,7 @@ import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/filter';
 import { NgForm } from '@angular/forms';
 import { GestionAbscencesService } from '../gestion-abscences.service';
-
-const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
-  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
@@ -29,7 +21,7 @@ export class CreerAbsenceComponent implements OnInit {
   public typeaheadBasicModel: any;
   public typeaheadFocusModel: any;
 
-  constructor(public gestionAbscencesService: GestionAbscencesService) { }
+  constructor(public gestionAbscencesService: GestionAbscencesService, private router: Router) { }
 
   onSubmit(form: NgForm) {
     const infoAbsence = {
@@ -43,7 +35,10 @@ export class CreerAbsenceComponent implements OnInit {
       form.value.prenomEnfant,
       form.value.nomEnfant,
       )
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(data => {console.log(data);}, error => console.log(error));
+      //this.router.navigate(['afficherAbsence']);
+      this.gestionAbscencesService.goAbsence();
+      //location.reload();
   }
 
   /*search = (text$: Observable<string>) =>

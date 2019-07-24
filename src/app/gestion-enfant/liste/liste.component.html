@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Liste d'enfants</h4>
+          <div class="table-responsive">
+              <form class="navbar-form navbar-right inline-form">
+                  <div class="form-group">
+                    <input type="search" class="input-sm form-control" placeholder="Recherche" [(ngModel)]="this.listeenfant.id" name="recherche">
+                    <button type="submit" class="btn btn-primary btn-sm" (click)="chercher()"><span class="glyphicon glyphicon-eye-open" ></span> Chercher</button>
+                  </div>
+                </form>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nom</th>
+                  <th scope="col">Prenom</th>
+                  <th scope="col">Date de naissance</th>
+                  <th scope="col">Date d'inscription</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let enfant of finalTable">
+                  <th scope="row">{{enfant.id}}</th>
+                  <td>{{enfant.nom}}</td>
+                  <td>{{enfant.prenom}}</td>
+                  <td>{{enfant.datenaissance}}</td>
+                  <td>{{enfant.dateinscription}}</td>
+                </tr>
+              </tbody>
+            </table>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>

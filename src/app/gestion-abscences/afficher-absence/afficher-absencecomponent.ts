@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/observable';
@@ -10,6 +10,7 @@ import 'rxjs/add/operator/filter';
 import { NgForm } from '@angular/forms';
 import { GestionAbscencesService } from '../gestion-abscences.service';
 import { DatePipe } from '@angular/common';
+import { absence } from './absence.model';
 
 @Component({
   selector: 'app-forms',
@@ -23,16 +24,10 @@ export class AfficherAbsenceComponent implements OnInit {
   public typeaheadFocusModel: any;
   public listeAbsence: any;
   public curDate=new Date();
+  //public absencesArray: any;
 
-
+  public absencesArray: absence[];
   constructor(public gestionAbscencesService: GestionAbscencesService, private datePipe: DatePipe) {}
-
-  onSubmit(form: NgForm) {
-
-    this.listeAbsence = this.gestionAbscencesService
-    .listerAbsence()
-      .subscribe(data => console.log(data), error => console.log(error));
-  }
 
   /*search = (text$: Observable<string>) =>
     text$
@@ -54,11 +49,10 @@ export class AfficherAbsenceComponent implements OnInit {
 
 
   ngOnInit() {
-    this.listeAbsence = this.gestionAbscencesService
-    .listerAbsence()
-      .subscribe(data => console.log(data), error => console.log(error));
-    console.log(this.listeAbsence);
-    var date3 = this.curDate;
+    this.listeAbsence = this.gestionAbscencesService.listerAbsence();
+    this.absencesArray = this.gestionAbscencesService.getAbs();
+    var date3 = Date.parse(this.curDate.toString());
+    console.log(date3);
     /*const name1 = 'yosri';
     const name2 = 'ramzi';
     const prenom1 = 'mimouna';
