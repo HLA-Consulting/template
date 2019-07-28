@@ -3,6 +3,8 @@ import { ViewEncapsulation } from '@angular/core';
 import { GestionEnfant } from '../gestion-enfant.service';
 import { NgForm } from '@angular/forms';
 import { EnfantFilter } from './listefilter';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tables',
@@ -11,12 +13,13 @@ import { EnfantFilter } from './listefilter';
   encapsulation: ViewEncapsulation.None
 })
 export class listeComponent implements OnInit {
-  constructor() {}
   currentRate: any;
   public typeaheadBasicModel: any;
   public typeaheadFocusModel: any;
-  private gestionEnfant: GestionEnfant;
+  public sub: any;
   finalTable : any;
+
+  constructor(public gestionEnfantService: GestionEnfant) { }
 
   listeenfant = new EnfantFilter();
   enfantList = [
@@ -45,7 +48,7 @@ export class listeComponent implements OnInit {
 ];
   fct(form: NgForm ) {
     // var a=this.gestionEnfant.listeEnfant()
-    
+
 
   }
   chercher(){
@@ -53,32 +56,34 @@ export class listeComponent implements OnInit {
     let filtredEnfant = this.enfantList.slice(0);
     if(this.listeenfant.id!== undefined && this.listeenfant.id !==''){
       filtredEnfant = filtredEnfant.filter((listenfant:any)=>{
-        
+
         return listenfant.id.indexOf(this.listeenfant.id)!==-1;
       });
 
     }
-  
-    
+
+
     this.finalTable = filtredEnfant.slice(0);
     console.log('aaaa',this.finalTable);
 
 
 
   }
-  
 
-  
+
+
 
 
   ngOnInit() {
      //this.http.get("http://localhost:8081/enfants").subscribe((enfants:[])=>{
      //  this.enfantList= enfants;
-     // console.log('aa',this.enfantList);  
+     // console.log('aa',this.enfantList);
      // })
         this.currentRate = 8;
-    this.finalTable = this.enfantList.slice(0);
-    
+        this.sub = this.gestionEnfantService.listerEnfant();
+        this.finalTable = this.gestionEnfantService.getListeEnfant();
+    //this.finalTable = this.enfantList.slice(0);
+
   }
 
 }

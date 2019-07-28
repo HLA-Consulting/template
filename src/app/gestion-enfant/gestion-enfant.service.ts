@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Enfant } from './Enfant.modele';
+import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class GestionEnfant {
@@ -17,43 +18,21 @@ export class GestionEnfant {
     datedenaissanceEnfant:string,
     datedinscription:string,
     classeEnfant:string,
-    télEnfant:string,
-    sexeEnfant:string,
-    NuméroEnfant:string,
-    problémesEnfant:string,
-    prendilEnfant:string,
-    AdresseEnfant:string,
-    aideznousEnfant:string,
+    télEnfant:string
 
-
-
-
-
-  ) {
-      const infoEnfant= {
-        nomEnfant: nomEnfant,
-        prenomEnfant: prenomEnfant,
-        photoEnfant:photoEnfant,
-        datedenaissanceEnfant:datedenaissanceEnfant,
-        datedinscription:datedinscription,
-        classeEnfant:classeEnfant,
-        télEnfant:télEnfant,
-        sexeEnfant:sexeEnfant,
-        NuméroEnfant:NuméroEnfant,
-        problémesEnfant: problémesEnfant,
-        prendilEnfant:prendilEnfant,
-        AdresseEnfant:AdresseEnfant,
-        aideznousEnfant:aideznousEnfant,
-
-
-
-
-
-        }
-        this.http
-        .put('http://localhost:4200/CreerEnfant', infoEnfant);
-
+  ): Observable<Object> {
+    const infoEnfant = {
+      nom: nomEnfant,
+      prénom: prenomEnfant,
+      photo: photoEnfant,
+      date_naissanceEnfant: datedenaissanceEnfant,
+      date_inscription: datedinscription,
+      classe: classeEnfant
       }
+    return this.http
+      .post('http://localhost:8080/create', infoEnfant);
+  }
+
 
 
       getListeEnfant() {
@@ -63,7 +42,7 @@ export class GestionEnfant {
       listerEnfant(){
         this.listeEnfant = [];
         return this.http
-        .get<Enfant[]>('http://localhost:8090/api/absences').toPromise().then(
+        .get<Enfant[]>('http://localhost:8080/enfants').toPromise().then(
           data =>{
             for (let key of data) {
                 var unit = {
@@ -71,10 +50,11 @@ export class GestionEnfant {
                   'nom': key.nom,
                   'prenom': key.prenom,
                   'dateDeNaissance': key.dateDeNaissance,
-                  'dateDinscription':key.dateDinscription,
+                  'dateDinscription': key.dateDinscription,
                 }
                 this.listeEnfant.push(unit);
             }
+            console.log(this.listeEnfant);
          }, error => console.log(error));
 }
 

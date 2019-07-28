@@ -1,12 +1,12 @@
 
-<!--<div class="row">
+<div class="row">
     <div class="col-md-6 d-flex align-items-stretch grid-margin">
       <div class="row flex-grow">
         <div class="col-12 grid-margin">
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Formulaire d'inscription</h4>
-              <form #creerEnfant (onSubmit)=fct(creerEnfant) class="forms-sample">
+              <form #creerEnfant="ngForm" (submit)=submitForm(creerEnfant) class="forms-sample">
                 <div class="form-group">
                   <label for="exampleInputEmail1">NOM</label>
                   <input type="text" ngModel name="nom" class="form-control" id="exampleInputNOM1" placeholder="Nom">
@@ -41,35 +41,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12 stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Horizontal Form</h4>
-                <p class="card-description">
-                  Suivi de votre enfant
-                </p>
-                <form class="forms-sample">
-                  <div class="form-group row">
-                    <label for="exampleInputIdentifiant" class="col-sm-3 col-form-label">Identifiant</label>
-                    <div class="col-sm-9">
-                      <input type="Identifiant" class="form-control" id="exampleInputIdentifiant" placeholder="Identifiant">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="exampleInputMotdepasse" class="col-sm-3 col-form-label">Mot de passe</label>
-                    <div class="col-sm-9">
-                      <input type="Motdepasse" class="form-control" id="exampleInputMotdepasse" placeholder="Mot de passe">
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-success mr-2">Submit</button>
-                  <button class="btn btn-light">Cancel</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
-      <div class="col-md-6 grid-margin stretch-card">
+ <!--     <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Details de l'enfant</h4>
@@ -111,13 +85,14 @@
               </div>
             </div>
           </div>
-          -->
-          <div class="row">
+
+-->
+          <!--
+            <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Création d'un enfant</h4>
-                  <p class="card-description">Use class <code>.tab-basic</code> for basic styling</p>
                   <ngb-tabset class="tab-basic">
                     <ngb-tab title="Formulaire d'inscription">
                       <ng-template ngbTabContent>
@@ -186,29 +161,13 @@
                                 <textarea ngModel name="propositions" class="form-control" id="exampleaideznousàprogresseravecvospropositions" rows="2">Vos propositions?</textarea>
                               </div>
                             </form>
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                       </ng-template>
                     </ngb-tab>
                   </ngb-tabset>
                   <br>
-                      <button type="submit" class="btn btn-success mr-2">Submit</button>
+                      <button type="button" onclick="submitForms(creerEnfant,detailsEnfants)" class="btn btn-success mr-2">Submit</button>
                       <button class="btn btn-light">Cancel</button>
                 </div>
               </div>
             </div>
+          -->
